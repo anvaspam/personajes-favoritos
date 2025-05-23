@@ -1,0 +1,68 @@
+/* Asegura que el cuerpo y el HTML ocupen toda la pantalla sin scroll */
+/* *{
+    margin: 0; padding: 0;
+    max-width: 100%;
+    max-height: 100%;
+} */
+
+body{
+    /* Elimina el scroll */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+.recipiente{
+    width: 500px;
+    height: 500px;
+}
+.suelo{
+    width: 500px;
+    height: 500px;
+}
+.suelo img{
+    position: relative;
+    width: 500px;
+    height: 500px;
+
+}
+.contenedor {
+    width: 500px;
+    height: 500px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-image: url('../img/suelo.png'); 
+    background-repeat: no-repeat;
+    background-position: bottom; */
+    
+     /* Para que la pelota no se salga del contenedor */
+}
+
+.pelota {
+    position: absolute;
+    top: 20%; /* Posición inicial */
+    left: 50%; /* Centrado horizontal */
+    transform: translateY(-50%); /* Centrar completamente */
+}
+
+.pelota img {
+    width: 30%; /* Tamaño de la pelota */
+    height: auto; 
+    animation: rebote 3s ease-in-out infinite;
+}
+
+@keyframes rebote {
+    0% {
+        transform: translateY(0); /* Comienza en su posición original */
+    }
+    50% {
+        transform: translateY(500px); /* Baja hacia el suelo */
+    }
+    100% {
+        transform: translateY(0); /* Vuelve a su posición inicial */
+    }
+}
